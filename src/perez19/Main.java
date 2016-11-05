@@ -1,9 +1,15 @@
 package perez19;
 
+import java.util.ArrayList;
+
 public class Main {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		Book classic = new Book("Moby Dick", "fiction");
+		TextBook liang = new TextBook("Intro to Java","programming","Java");
+		Blog women = new Blog("liveyourdream.org","empowerment","self-actualization");
+		
+		GenericStack <Printed> stack = new GenericStack<>();
 		
 		System.out.println("TEST");
 
@@ -16,16 +22,8 @@ public class Main {
 /* Do just the two exercises below.
 
 EXERCISE 1
-Use classes Printed, Book, TextBook and Blog from the zipped examples, but add an abstract method to Printed with this signature:
-
-    public abstract String distribution();
-
-Implement this method in all subclasses of Printed to indicate how each subclass is distributed in print. See sample output 
-for ideas but feel free to be creative with the String returned by distribution().
-
 
 Create an executable class that:
-	•creates a GenericStack object like this:   GenericStack<Printed> stack = new GenericStack<>();
 	•add a Book, TextBook, and Blog to stack. Add all of them anonymously.
 	•try to add an instance of Printed and explain why it won't work in a comment.
 	•call a public generic method named show with stack as its only argument.

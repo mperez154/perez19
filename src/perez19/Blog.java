@@ -12,4 +12,11 @@ public class Blog extends Printed {
 	public String toString() {
 		return "Blog theme = " + theme + ", " + super.toString();
 	}
+
+	//Adding abstract method from printed
+	@Override
+	public String distribution() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

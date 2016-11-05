@@ -13,4 +13,11 @@ public class Book extends Printed {
 	public String toString() {
 		return "Book genre = " + genre + ", " + super.toString();
 	}
+	
+	//Adding abstract method from Printed
+	@Override
+	public String distribution() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

@@ -6,6 +6,9 @@ public abstract class Printed {
 	public Printed(String title) {
 		this.title = title;
 	}
+	
+	//Abstract method added for assignment
+	public abstract String distribution();
 
 	@Override
 	public String toString() {
