@@ -2,21 +2,24 @@ package perez19;
 
 public class Blog extends Printed {
 	private String theme;
+	private String subject;
 
 	public Blog(String title, String subject, String theme) {
 		super(title);
 		this.theme = theme;
+		this.subject = subject;
 	}
 
-	@Override
-	public String toString() {
-		return "Blog theme = " + theme + ", " + super.toString();
-	}
-
-	//Adding abstract method from printed
+	// Adding abstract method from printed, returning distribution method
 	@Override
 	public String distribution() {
-		// TODO Auto-generated method stub
-		return null;
+		return "\nDistribution: on the web\n";
 	}
+
+	// Adding distribution method to the existing toString method
+	@Override
+	public String toString() {
+		return "Blog theme = " + theme + ", Blog subject = " + subject + ", " + super.toString() + distribution();
+	}
+
 }

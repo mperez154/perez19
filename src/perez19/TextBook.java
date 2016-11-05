@@ -3,8 +3,8 @@ package perez19;
 public class TextBook extends Book {
 	private String subject;
 
-	public TextBook(String title, String genre, String subject) {
-		super(title, genre);
+	public TextBook(String title, String genre, String distribution, String subject) {
+		super(title, genre, distribution);
 		this.subject = subject;
 	}
 
