@@ -2,38 +2,32 @@ package perez19;
 
 import java.util.ArrayList;
 
-import javafx.scene.shape.Circle;
-import javafx.scene.shape.Rectangle;
-
 public class Exercise2 {
 
 	public static void main(String[] args) {
-		
+
+		// New Array List
 		ArrayList<Object> list = new ArrayList<>();
-				
-		list.add(new Rectangle(25,25));
+
+		// Adding elements to ArrayList
+		list.add(new Rectangle(25, 25));
 		list.add(new Circle(25));
 		list.add("James Gosling");
 		list.add(12);
-		
-		Rectangle rectangle = new Rectangle(25,25);
-		
-		System.out.print("Circle area is ");
-		//System.out.println(Exercise2.<Rectangle>displayList(rectangle));
-		
-		
+
+		// Calling void generic Method
+		displayList2(list);
 	}
-	
-	//See MyGenericMethod demo for sample output
-	public static <E extends GeometricObject> double displayList(E shape)
-	{			
-		return shape.getArea();	
+	// Referred to sample on page 748 for help with this generic method
+	public static <E extends GeometricObject> void displayList2(ArrayList<Object> object) {
+		// Standard for loop
+		for (int i = 0; i < object.size(); i++) {
+			// If-else statement that gets the element class type - struggled with this but Eclipse suggestions helped me to figure this out
+			if (object.get(i).getClass() == perez19.Rectangle.class) {
+				System.out.println("Rectangle Area is " + ((Rectangle) object.get(i)).getArea());
+			} else if (object.get(i).getClass() == perez19.Circle.class) {
+				System.out.println("Circle Area is " + ((Circle) object.get(i)).getArea());
+			} else System.out.println(object.get(i).toString());
+		}
 	}
 }
-
-/*
- * Write and call a void method that takes the list as its sole argument:
- * •process the list with a loop •inside the loop, display the areas of both the
- * Circle and Rectangle objects but run toString() for the String and Integer.
- * SAMPLE OUTPUT Area is 50.0 James Gosling 12 Area is 95.03317777109125
- */
