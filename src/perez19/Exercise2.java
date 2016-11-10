@@ -22,10 +22,10 @@ public class Exercise2 {
 	public static <E extends GeometricObject> void displayList2(ArrayList<Object> object) {
 		// Standard for loop
 		for (int i = 0; i < object.size(); i++) {
-			// If-else statement that gets the element class type - struggled with this but Eclipse suggestions helped me to figure this out
-			if (object.get(i).getClass() == perez19.Rectangle.class) {
+			// updated with your help to use instanceof operator instead of getClass() method
+			if (object.get(i) instanceof perez19.Rectangle) {
 				System.out.println("Rectangle Area is " + ((Rectangle) object.get(i)).getArea());
-			} else if (object.get(i).getClass() == perez19.Circle.class) {
+			} else if (object.get(i) instanceof perez19.Circle) {
 				System.out.println("Circle Area is " + ((Circle) object.get(i)).getArea());
 			} else System.out.println(object.get(i).toString());
 		}
